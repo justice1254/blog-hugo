@@ -1,3 +1,4 @@
+﻿ignoreLogs = ['warning-goldmark-raw-html']
 baseURL = "https://yourblog.azurestaticapps.net/"
 languageCode = "en-us"
 title = "My Side Blog"
@@ -9,3 +10,8 @@ theme = "PaperMod"
   ShowPostNavLinks = true
   ShowToc = true
   TocOpen = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
