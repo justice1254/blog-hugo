@@ -1,0 +1,4 @@
+baseURL = "https://yourblog.azurestaticapps.net/"
+languageCode = "en-us"
+title = "My Side Blog"
+theme = "PaperMod"
