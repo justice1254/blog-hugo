@@ -2,14 +2,13 @@ ignoreLogs = ['warning-goldmark-raw-html']
 
 baseURL = "https://agreeable-cliff-00cc33100.2.azurestaticapps.net/"
 languageCode = "ko-kr"
-title = "My Side Blog"
+title = "사이드 블로그"
 theme = "PaperMod"
 
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
-      unsafe = true
-
+unsafe = true
 [params]
   ShowReadingTime = true
   ShowToc = true
