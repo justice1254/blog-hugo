@@ -1,0 +1,7 @@
+baseURL = "/"
+title = "Jay의 잡동사니"
+paginate = 10
+
+[params]
+  author = "Jay Jun"
+  description = "Jay가 모으고 정리하는 기술 · 업무 · 여행 기록"

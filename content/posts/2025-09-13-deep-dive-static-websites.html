@@ -1,0 +1,65 @@
++++
+title = "정적 웹사이트의 모든 것: Hugo와 Azure Static Web Apps 심층 가이드"
+date = 2025-09-13T12:06:32+09:00
+draft = false
+description = "정적 사이트가 왜 다시 주목받는지, Hugo의 구조와 Azure SWA 배포 전략, 성능·보안·SEO까지 총망라한 실전형 자료."
+tags = ["정적웹","Hugo","Azure","DevOps","SEO"]
++++
+
+<div style="max-width:960px;margin:0 auto;line-height:1.8;font-size:1.05rem;">
+  <h1>정적 웹사이트의 모든 것: Hugo와 Azure SWA 심층 가이드</h1>
+
+  <p><strong>정적 웹</strong>은 단순히 옛날 기술이 아닙니다. CDN·서버리스·CI/CD 환경과 결합하면서
+  가장 강력하고 효율적인 배포 방식 중 하나로 부활했습니다. 이 글에서는 <em>Hugo</em> 기반의 사이트를
+  <em>Azure Static Web Apps</em>에 배포하는 전 과정을 세밀하게 다룹니다.</p>
+
+  <h2>1. 정적 웹의 장점</h2>
+  <ul>
+    <li><b>속도</b>: 서버 렌더링 없이 CDN에서 바로 서빙 → TTFB 최소화.</li>
+    <li><b>보안</b>: DB나 동적 코드 없음 → 공격 표면 대폭 감소.</li>
+    <li><b>비용</b>: 서버 유지비 제로, 무료 티어로도 충분히 운영 가능.</li>
+  </ul>
+
+  <h2>2. Hugo의 구조</h2>
+  <pre><code>/
+├─ content/     # 글/페이지
+├─ layouts/     # 템플릿
+├─ static/      # 이미지/JS/CSS
+├─ themes/      # 테마
+└─ config.toml  # 사이트 설정</code></pre>
+
+  <h2>3. Azure SWA 배포 전략</h2>
+  <ol>
+    <li>GitHub 레포 연결 → Actions 자동 생성.</li>
+    <li>빌드: <code>hugo --gc --minify</code>, 출력은 <code>public</code>.</li>
+    <li>SWA에서 <code>app_location</code>을 <code>public</code>으로 지정.</li>
+  </ol>
+
+  <h2>4. 성능 최적화</h2>
+  <table>
+    <tr><th>항목</th><th>권장</th><th>효과</th></tr>
+    <tr><td>이미지</td><td>WebP/AVIF 변환</td><td>용량 50% 이상 절감</td></tr>
+    <tr><td>폰트</td><td>preload + font-display:swap</td><td>CLS 방지</td></tr>
+    <tr><td>JS</td><td>필요 최소화, defer</td><td>렌더링 차단 요소 감소</td></tr>
+  </table>
+
+  <h2>5. SEO & 접근성</h2>
+  <ul>
+    <li>title/description 메타 충실히 작성.</li>
+    <li>Open Graph/Twitter 카드 이미지 제공.</li>
+    <li>색상 대비와 heading 계층 구조 준수.</li>
+  </ul>
+
+  <h2>6. 자주 발생하는 문제와 해결</h2>
+  <details>
+    <summary>❌ 글이 목록에 안 보임</summary>
+    <p>대부분 <code>draft=true</code> 또는 미래 시각 설정 때문. 과거 시각 + draft=false로 저장하세요.</p>
+  </details>
+  <details>
+    <summary>❌ 빌드 성공했는데 화면이 비어있음</summary>
+    <p><code>public/</code>이 비어 있거나 테마 목록 템플릿이 글을 숨김. 로컬 빌드로 먼저 확인.</p>
+  </details>
+
+  <hr>
+  <p style="color:#666">© 2025 Jay의 잡동사니 — 한 번 정리하면 두 번 일하지 않는다</p>
+</div>

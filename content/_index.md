@@ -1,7 +1,8 @@
----
-title: "홈"
----
-<div style="padding:16px;border:1px solid #e5e7eb;border-radius:12px;background:#f8fafc;font-family:ui-sans-serif,system-ui;">
-  <h2 style="margin:0 0 8px 0;">어서 오세요 👋</h2>
-  <p style="margin:0;">아래에서 최신 글을 만나보세요. 품질 좋은 글만 선별해 올립니다.</p>
-</div>
++++
+title = "Jay의 잡동사니"
+description = "Jay가 모으고 정리하는 기술 · 업무 · 여행 기록"
++++
+
+<article style="max-width:920px;margin:2rem auto;font-size:1.05rem;line-height:1.8;">
+  <p>이곳은 Jay의 사이드 블로그입니다. 실무에서 바로 쓸 수 있는 지식과 기록을 구조화해 남깁니다.</p>
+</article>
